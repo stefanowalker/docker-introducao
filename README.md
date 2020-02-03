@@ -34,6 +34,19 @@ docker build -t php-image -f website/Dockerfile .
 
 // . o ponto ao final significa que o contexto da execução é a pasta atual (do projeto)
 
+
+### Ver as imagens das libs/modulos criados
+```
+docker image ls
+```
+
+### Criando os containers
+```
+docker run -d --rm --name mysql-container mysql-image
+```
+
+// com o comando docker ps dá pra ver os containers criados, rodando
+
 ### Rodando os containers
 Na pasta raíz do projeto, execute um de cada vez:
 
@@ -47,6 +60,12 @@ docker run -d -v $(pwd)/api:/home/node/app -p 9001:9001 --link mysql-container -
 ```
 docker run -d -v "$(pwd)/website":/var/www/html -p 8888:80 --link node-container --rm --name php-container php-image
 ```
+
+// -d significa wque o terminal pode ser usado, depois do comando. O terminal nao fica preso na exibicao de informaçoes do container. Sem isso nao é possível utilzar o terminal enquanto o container estiver de pé.
+
+//-rm significa que se o container existir, ele será removido para que outro possa ser criado.
+
+
 
 ### Agora faça o restore do banco:
 ```
