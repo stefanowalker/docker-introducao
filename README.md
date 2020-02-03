@@ -28,6 +28,11 @@ docker build -t node-image -f api/Dockerfile .
 ```
 docker build -t php-image -f website/Dockerfile .
 ```
+// -t significa tag e nome em seguida é o nome escolhido por mim.
+
+// -f significa que o file que eu devo usar para construir o docker
+
+// . o ponto ao final significa que o contexto da execução é a pasta atual (do projeto)
 
 ### Rodando os containers
 Na pasta raíz do projeto, execute um de cada vez:
